@@ -1,0 +1,21 @@
+<div class="flex justify-content-center h-full align-items-center">
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="flex justify-content-center"><h2>Expenditure</h2></div>
+    </ng-template>
+    <div class="flex flex-column">
+      <p-calendar [(ngModel)]="date" [showIcon]="true" class="mb-3"></p-calendar>
+      <p-dropdown [options]="categories" optionLabel="name" [style]="{'minWidth':'100%'}" class="mb-3"></p-dropdown>
+      <p-inputNumber [(ngModel)]="amount" mode="currency" inputId="currency-japan" currency="KZT"
+                     locale="kk-KZ" [style]="{'minWidth':'100%'}" class="mb-3"></p-inputNumber>
+      <p-fileUpload mode="basic" chooseLabel="Choose" name="demo[]" accept="application/pdf"
+                    (onUpload)="onUpload($event)" [style]="{'minWidth':'100%'}" class="mb-3"></p-fileUpload>
+      <div class="flex justify-content-center">
+        <p-button label="Success" styleClass="p-button-rounded p-button-success"></p-button>
+      </div>
+    </div>
+
+  </p-card>
+</div>
+
+
