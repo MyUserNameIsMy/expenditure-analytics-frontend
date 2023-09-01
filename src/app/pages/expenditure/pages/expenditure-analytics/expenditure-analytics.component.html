@@ -1,0 +1,72 @@
+<div class="h-full flex justify-content-around">
+  <div class="left-side w-4">
+    <div class="mb-5"></div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <div class="flex justify-content-center"><span class="text-2xl font-semibold pt-2">History</span></div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <p-table
+          [value]="expenditures"
+          [paginator]="true"
+          [rows]="3">
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width:25%">Category</th>
+              <th style="width:25%">Date</th>
+              <th style="width:25%">Amount</th>
+              <th style="width:25%">Details</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-expenditure>
+            <tr>
+              <td>{{ expenditure.category }}</td>
+              <td>{{ expenditure.date | date }}</td>
+              <td>{{ expenditure.amount }}</td>
+              <td>{{ 0 }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </ng-template>
+    </p-card>
+    <div class="mb-5"></div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <div class="flex justify-content-center"><span class="text-2xl font-semibold pt-2">Notification</span></div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <p-table
+          [value]="expenditures"
+          [paginator]="true"
+          [rows]="3">
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width:25%">Category</th>
+              <th style="width:25%">Date</th>
+              <th style="width:25%">Amount</th>
+              <th style="width:25%">Details</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-expenditure>
+            <tr>
+              <td>{{ expenditure.category }}</td>
+              <td>{{ expenditure.date | date }}</td>
+              <td>{{ expenditure.amount }}</td>
+              <td><i class="pi pi-minus" style="color: red"></i></td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="right-side w-7">
+    <div class="upper-right-side flex justify-content-around mb-8 mt-5">
+      <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+      <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+    </div>
+    <div class="lower-right-side">
+      <p-chart type="line" [data]="data2" [options]="options2" height="450px"></p-chart>
+    </div>
+
+  </div>
+</div>

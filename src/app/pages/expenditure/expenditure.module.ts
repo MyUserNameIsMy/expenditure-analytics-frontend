@@ -8,18 +8,27 @@ import {CardModule} from "primeng/card";
 import {FileUploadModule} from "primeng/fileupload";
 import {DropdownModule} from "primeng/dropdown";
 import {PaginatorModule} from "primeng/paginator";
+import {ExpenditureAnalyticsComponent} from './pages/expenditure-analytics/expenditure-analytics.component';
+import {TableModule} from "primeng/table";
+import {ChartModule} from "primeng/chart";
 
 const routes: Routes = [
   {
     path: 'expenditure-submit',
     component: ExpenditureSubmitComponent,
     title: 'Expenditure-Submit'
+  },
+  {
+    path: 'expenditure-analytics',
+    component: ExpenditureAnalyticsComponent,
+    title: 'Expenditure-Submit'
   }
 ]
 
 @NgModule({
   declarations: [
-    ExpenditureSubmitComponent
+    ExpenditureSubmitComponent,
+    ExpenditureAnalyticsComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +38,9 @@ const routes: Routes = [
     CardModule,
     FileUploadModule,
     DropdownModule,
-    PaginatorModule
+    PaginatorModule,
+    TableModule,
+    ChartModule
   ]
 })
 export class ExpenditureModule {
